@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - AI Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body { 
+            background: linear-gradient(135deg, #e0eadd 0%, #f7f3e9 50%, #f7e9d7 100%);
+            background-attachment: fixed;
+        }
+        .stat-card { transition: all 0.3s ease; }
+        .stat-card:hover { transform: translateY(-8px); }
+        .ai-glow { 
+            box-shadow: 0 0 20px rgba(0, 128, 128, 0.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-[#1a1a1a] min-h-screen pb-20">
+
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center animate__animated animate__fadeIn">
+        <div class="flex items-center space-x-2">
+            <div class="bg-[#008080] text-white p-2 rounded-lg font-bold">H</div>
+            <span class="font-bold text-xl">HelpHub AI</span>
+        </div>
+        <div class="flex bg-white/40 backdrop-blur-md rounded-full px-4 py-1.5 space-x-6 text-sm font-medium">
+            <a href="dashboard.html" class="hover:text-teal-700">Dashboard</a>
+            <a href="create complain.html" class="hover:text-teal-700">Create Request</a>
+            <a href="ai center.html" class="text-[#008080] bg-white/60 px-3 py-1 rounded-full">AI Center</a>
+        </div>
+    </nav>
+
+    <header class="max-w-6xl mx-auto px-6 mt-4">
+        <div class="bg-[#2d3134] rounded-[2.5rem] p-10 md:p-14 text-white shadow-2xl animate__animated animate__slideInDown">
+            <p class="text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-4 uppercase">AI Center</p>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">See what the platform intelligence is noticing.</h1>
+            <p class="text-gray-400 text-sm max-w-xl">AI-like insights summarize demand trends, helper readiness, urgency signals, and request recommendations.</p>
+        </div>
+    </header>
+
+    <div class="max-w-6xl mx-auto px-6 mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="stat-card bg-white/60 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/80 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+            <p class="text-[10px] font-bold tracking-widest uppercase text-teal-700 mb-6">Trend Pulse</p>
+            <h3 class="text-3xl font-bold mb-4">Web Development</h3>
+            <p class="text-[11px] text-gray-500 leading-relaxed">Most common support area based on active community requests.</p>
+        </div>
+        <div class="stat-card bg-white/60 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/80 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+            <p class="text-[10px] font-bold tracking-widest uppercase text-teal-700 mb-6">Urgency Watch</p>
+            <h3 class="text-6xl font-bold mb-4">2</h3>
+            <p class="text-[11px] text-gray-500 leading-relaxed">Requests currently flagged high priority by the urgency detector.</p>
+        </div>
+        <div class="stat-card bg-white/60 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/80 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+            <p class="text-[10px] font-bold tracking-widest uppercase text-teal-700 mb-6">Mentor Pool</p>
+            <h3 class="text-6xl font-bold mb-4">2</h3>
+            <p class="text-[11px] text-gray-500 leading-relaxed">Trusted helpers with strong response history and contribution signals.</p>
+        </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-6 mt-8">
+        <div class="bg-white/50 backdrop-blur-xl p-8 md:p-14 rounded-[3rem] border border-white/60 ai-glow animate__animated animate__fadeIn">
+            
+            <p class="text-[10px] font-bold tracking-widest uppercase text-teal-700 mb-4">AI Recommendations</p>
+            <h2 class="text-4xl font-bold mb-10">Requests needing attention</h2>
+
+            <div class="space-y-4">
+                <div class="p-8 bg-white/40 border border-white/80 rounded-3xl animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <h4 class="font-bold text-sm mb-2">Need help</h4>
+                    <p class="text-[11px] text-gray-500 mb-6">AI summary: Web Development request with high urgency. Best suited for members with relevant expertise.</p>
+                    <div class="flex gap-2">
+                        <span class="bg-teal-50 text-teal-700 text-[10px] px-3 py-1 rounded-full font-bold">Web Development</span>
+                        <span class="bg-teal-50 text-teal-700 text-[10px] px-3 py-1 rounded-full font-bold">High</span>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white/40 border border-white/80 rounded-3xl animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                    <h4 class="font-bold text-sm mb-2">Need help making my portfolio responsive before demo day</h4>
+                    <p class="text-[11px] text-gray-500 mb-6">Responsive layout issue with a short deadline. Best helpers are frontend mentors comfortable with CSS grids and media queries.</p>
+                    <div class="flex gap-2">
+                        <span class="bg-teal-50 text-teal-700 text-[10px] px-3 py-1 rounded-full font-bold">Web Development</span>
+                        <span class="bg-teal-50 text-teal-700 text-[10px] px-3 py-1 rounded-full font-bold">High</span>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white/40 border border-white/80 rounded-3xl animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                    <h4 class="font-bold text-sm mb-2">Looking for Figma feedback on a volunteer event poster</h4>
+                    <p class="text-[11px] text-gray-500 mb-6">A visual design critique request where feedback on hierarchy, spacing, and messaging would create the most value.</p>
+                    <div class="flex gap-2">
+                        <span class="bg-teal-50 text-teal-700 text-[10px] px-3 py-1 rounded-full font-bold">Design</span>
+                        <span class="bg-teal-50 text-teal-700 text-[10px] px-3 py-1 rounded-full font-bold">Medium</span>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white/40 border border-white/80 rounded-3xl animate__animated animate__fadeInUp" style="animation-delay: 0.7s;">
+                    <h4 class="font-bold text-sm mb-2">Need mock interview support for internship applications</h4>
+                    <p class="text-[11px] text-gray-500 mb-6">Career coaching request focused on confidence-building, behavioral answers, and entry-level frontend interviews.</p>
+                    <div class="flex gap-2">
+                        <span class="bg-teal-50 text-teal-700 text-[10px] px-3 py-1 rounded-full font-bold">Career</span>
+                        <span class="bg-teal-50 text-teal-700 text-[10px] px-3 py-1 rounded-full font-bold">Low</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
+</body>
+</html>

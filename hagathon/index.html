@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0e7ff 0%, #fef3c7 100%);
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="flex flex-col">
+
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
+        <div class="flex items-center gap-2">
+            <div class="bg-[#008080] text-white p-2 rounded-lg font-bold">H</div>
+            <span class="font-bold text-gray-800 text-xl">Helphub AI</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-gray-600 font-medium">
+            <a href="/pages/dashboard.html" class="hover:text-black">Home</a>
+            <a href="/pages/Explore.html" class="hover:text-black">Explore</a>
+            <a href="/pages/leader.html" class="hover:text-black">Leaderboard</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="flex flex-col md:flex-row max-w-5xl w-full gap-6 animate__animated animate__fadeInUp">
+            
+            <div class="md:w-1/2 bg-[#0d2a26] text-white p-10 rounded-[2rem] flex flex-col justify-center">
+                <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Community Access</p>
+                <h1 class="text-5xl font-bold mb-6 leading-tight">Enter the support network.</h1>
+                <p class="text-gray-300 mb-8 leading-relaxed">
+                    Choose a demo identity, set your role, and jump into a multi-page product flow designed for asking, offering, and tracking help.
+                </p>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-teal-400">●</span> Role-based entry for Need Help, Can Help, or Both
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-teal-400">●</span> Direct path into dashboard, requests, AI Center
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-teal-400">●</span> Persistent demo session powered by LocalStorage
+                    </li>
+                </ul>
+            </div>
+
+            <div class="md:w-1/2 glass-card p-10 rounded-[2rem] shadow-xl">
+                <p class="text-xs uppercase tracking-widest text-teal-600 font-bold mb-2">Login / Signup</p>
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Authenticate your profile</h2>
+
+                <form id="loginForm" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="userName" required placeholder="Ayesha Khan"
+                            class="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Father Name</label>
+                        <input type="text" id="fatherName" required placeholder="Enter father's name"
+                            class="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition-all">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="userEmail" required placeholder="community@helphub.ai"
+                                class="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                            <input type="password" id="userPass" required placeholder="••••••••"
+                                class="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-teal-500 outline-none transition-all">
+                        </div>
+                    </div>
+
+                    <button type="submit" 
+                        class="w-full bg-[#14b8a6] hover:bg-[#0d9488] text-white font-bold py-4 rounded-xl mt-4 transition-all transform active:scale-95 shadow-lg">
+                        <a href="pages/dashboard.html">contineu to dasboard</a>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Page refresh hone se rokta hai
+
+            // Inputs se value nikalna
+            const name = document.getElementById('userName').value;
+            const fatherName = document.getElementById('fatherName').value;
+            const email = document.getElementById('userEmail').value;
+            const password = document.getElementById('userPass').value;
+
+            // Simple check: Agar fields khali hain (Wese 'required' attribute laga hua hai)
+            if(name && fatherName && email && password) {
+                
+                // User object banana
+                const userData = {
+                    fullName: name,
+                    fatherName: fatherName,
+                    email: email,
+                    password: password
+                };
+
+                // Local Storage mein save karna (String format mein)
+                localStorage.setItem('currentUser', JSON.stringify(userData));
+
+                alert('Success! Data saved to LocalStorage.');
+                
+                // Dashboard par bhej dena (Yahan aap apna link dal sakte hain)
+                // window.location.href = "dashboard.html";
+                
+                console.log("Saved Data:", JSON.parse(localStorage.getItem('currentUser')));
+            } else {
+                alert('Please fill all the fields!');
+            }
+        });
+    </script>
+</body>
+</html>

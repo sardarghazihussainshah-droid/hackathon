@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Leaderboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body { background: linear-gradient(135deg, #e0eadd 0%, #f7f3e9 50%, #f7e9d7 100%); }
+        .glass { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.6); }
+        
+        /* Custom animation for progress bars */
+        @keyframes fill-bar {
+            from { width: 0%; }
+            to { width: var(--target-width); }
+        }
+        .progress-fill {
+            animation: fill-bar 1.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-sans text-[#1a1a1a] pb-20">
+
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center animate__animated animate__fadeIn">
+        <div class="flex items-center space-x-2">
+            <div class="bg-[#008080] text-white p-2 rounded-lg font-bold">H</div>
+            <span class="font-bold text-xl">HelpHub AI</span>
+        </div>
+        <div class="flex bg-white/40 backdrop-blur-md rounded-full px-4 py-1.5 space-x-6 text-sm font-medium">
+            <a href="dashboard.html" class="hover:text-teal-700">Dashboard</a>
+            <a href="Explore.html" class="hover:text-teal-700">Explore</a>
+            <a href="leader.html" class="text-[#008080] bg-white/60 px-3 py-1 rounded-full">Leaderboard</a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-6">
+        
+        <header class="bg-[#2d3134] rounded-[2.5rem] p-10 md:p-14 text-white mb-10 animate__animated animate__zoomIn">
+            <p class="text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-4 uppercase">Leaderboard</p>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Recognize the people who keep the community moving.</h1>
+            <p class="text-gray-400 text-sm max-w-xl">Trust score, contribution count, and badges create visible momentum for reliable helpers.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <section class="glass p-10 rounded-[3rem] animate__animated animate__fadeInLeft">
+                <p class="text-[10px] font-bold tracking-widest uppercase text-teal-700 mb-4">Top Helpers</p>
+                <h2 class="text-5xl font-bold mb-10">Rankings</h2>
+                
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-2xl flex items-center justify-between shadow-sm border border-gray-50">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-[#1a2b3c] text-white flex items-center justify-center rounded-full font-bold text-xs">HA</div>
+                            <div>
+                                <h4 class="font-bold text-sm">#2 Hassan Ali</h4>
+                                <p class="text-[10px] text-gray-400">JavaScript, React, Git/GitHub</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-sm">88%</p>
+                            <p class="text-[10px] text-gray-400">24 contributions</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl flex items-center justify-between shadow-sm border border-gray-50">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-orange-500 text-white flex items-center justify-center rounded-full font-bold text-xs">SN</div>
+                            <div>
+                                <h4 class="font-bold text-sm">#3 Sara Noor</h4>
+                                <p class="text-[10px] text-gray-400">Python, Data Analysis</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-sm">74%</p>
+                            <p class="text-[10px] text-gray-400">11 contributions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass p-10 rounded-[3rem] animate__animated animate__fadeInRight">
+                <p class="text-[10px] font-bold tracking-widest uppercase text-teal-700 mb-4">Badge System</p>
+                <h2 class="text-5xl font-bold mb-10">Trust and achievement</h2>
+                
+                <div class="space-y-8">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-bold">Hassan Ali</span>
+                            <span class="text-[10px] text-gray-400 uppercase font-bold">Code Rescuer • Bug Hunter</span>
+                        </div>
+                        <div class="w-full bg-gray-200/50 h-3 rounded-full overflow-hidden">
+                            <div class="progress-fill bg-teal-600 h-full rounded-full" style="--target-width: 88%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-bold">Sara Noor</span>
+                            <span class="text-[10px] text-gray-400 uppercase font-bold">Community Voice</span>
+                        </div>
+                        <div class="w-full bg-gray-200/50 h-3 rounded-full overflow-hidden">
+                            <div class="progress-fill bg-orange-500 h-full rounded-full" style="--target-width: 74%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>
+</body>
+</html>
